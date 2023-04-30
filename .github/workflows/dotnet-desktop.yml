@@ -93,7 +93,7 @@ jobs:
         Configuration: ${{ matrix.configuration }}
         
     - name: Build
-      run: dotnet build --configuration $env:Configuration
+      run: set "DISABLEOUTOFPROCTASKHOST=0" && dotnet build --configuration $env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
