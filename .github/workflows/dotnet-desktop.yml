@@ -124,3 +124,7 @@ jobs:
     #  with:
     #    name: MSIX Package
     #    path: ${{ env.Wap_Project_Directory }}\AppPackages
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: bin\${{ matrix.configuration }}
