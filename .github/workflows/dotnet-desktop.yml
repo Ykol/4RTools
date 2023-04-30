@@ -82,6 +82,9 @@ jobs:
     # Execute all unit tests in the solution
     #- name: Execute unit tests
     #  run: dotnet test
+    
+    - name: Install dependencies Fody
+      run: dotnet add package Fody --version 6.5.5
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
@@ -90,7 +93,7 @@ jobs:
         Configuration: ${{ matrix.configuration }}
         
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release
 
     # Decode the base 64 encoded pfx and save the Signing_Certificate
     #- name: Decode the pfx
