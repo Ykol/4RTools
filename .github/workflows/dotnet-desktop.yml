@@ -126,5 +126,5 @@ jobs:
     #    path: ${{ env.Wap_Project_Directory }}\AppPackages
     - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
+        name: 4RNods
         path: bin\${{ matrix.configuration }}
